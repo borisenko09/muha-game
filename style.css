@@ -1,0 +1,104 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+#game-container {
+    display: grid;
+    grid-template-columns: repeat(var(--grid-size), 60px);
+    grid-gap: 5px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.cell {
+    width: 60px;
+    height: 60px;
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+}
+
+.cell.fly {
+    background-color: #28a745;
+    animation: pulse 1s infinite;
+}
+
+.cell.trap {
+    background-color: #dc3545;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(40, 167, 69, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(40, 167, 69, 0);
+    }
+}
+
+/* Анимация победы */
+@keyframes winAnimation {
+    0% {
+        background-color: transparent;
+    }
+    50% {
+        background-color: rgba(40, 167, 69, 0.5);
+    }
+    100% {
+        background-color: transparent;
+    }
+}
+
+.win-animation {
+    animation: winAnimation 2s ease-in-out;
+}
+
+/* Анимация проигрыша */
+@keyframes loseAnimation {
+    0% {
+        background-color: transparent;
+    }
+    50% {
+        background-color: rgba(220, 53, 69, 0.5);
+    }
+    100% {
+        background-color: transparent;
+    }
+}
+
+.lose-animation {
+    animation: loseAnimation 2s ease-in-out;
+}
+
+/* Стили для текста статуса игры */
+#game-status {
+    font-size: 1.2em;
+    margin-top: 15px;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 576px) {
+    .cell {
+        width: 40px;
+        height: 40px;
+    }
+
+    #game-container {
+        grid-template-columns: repeat(var(--grid-size), 40px);
+    }
+}
