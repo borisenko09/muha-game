@@ -12,8 +12,10 @@
     <div class="container">
         <h1 class="my-4">Игра "Муха"</h1>
         <div id="game-container" class="mb-4"></div>
+        
         <div id="controls" class="text-center">
             <div class="form-group">
+                <p>Муха пошла: <span id="fly-direction">-</span></p>
                 <label for="grid-size">Размер поля:</label>
                 <input type="range" class="custom-range w-50" id="grid-size" min="5" max="10" value="5">
                 <span id="grid-size-value">5 x 5</span>
@@ -33,7 +35,7 @@
                 <button id="restart-button" class="btn btn-danger">Перезапустить игру</button>
             </div>
             <p>Текущий ход: <span id="current-move">0</span></p>
-            <p>Муха пошла: <span id="fly-direction">-</span></p>
+            
             <p id="game-status" class="font-weight-bold"></p>
         </div>
     </div>
