@@ -96,11 +96,11 @@ function moveFly() {
     }
 
     const directions = [
-    { x: -1, y: 0, name: 'влево⬅️', arrow: '⬅️' },
-    { x: 1, y: 0, name: 'вправо➡️', arrow: '➡️' },
-    { x: 0, y: -1, name: 'вверх⬆️', arrow: '⬆️' },
-    { x: 0, y: 1, name: 'вниз⬇️', arrow: '⬇️' },
-];
+    { x: -1, y: 0, name: 'влево⬅️'},
+    { x: 1, y: 0, name: 'вправо➡️'},
+    { x: 0, y: -1, name: 'вверх⬆️'},
+    { x: 0, y: 1, name: 'вниз⬇️' },
+    ];
 
     let possibleDirections = directions.slice();
 
